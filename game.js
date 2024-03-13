@@ -109,6 +109,7 @@ function restartGame(){
         }, 650); // De tijd moet overeenkomen met de duur van de fade-out-animatie
     });
     
+    
     running = true;
 }
 
