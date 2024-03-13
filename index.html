@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heading">
+        <p>Tic</p>
+        <p>Tac</p>
+        <p>Toe</p>
+    </div>
+    <div class="gameboard">
+        <div class="topRow">
+            <div data-cell-index="0" class="one cell"></div>
+            <div data-cell-index="1" class="two cell"></div>
+            <div data-cell-index="2" class="three cell"></div>
+        </div>
+        <div class="midRow">
+            <div data-cell-index="3" class="four cell"></div>
+            <div data-cell-index="4" class="five cell"></div>
+            <div data-cell-index="5" class="six cell"></div>
+        </div>
+        <div class="bottomRow">
+            <div data-cell-index="6" class="seven cell"></div>
+            <div data-cell-index="7" class="eight cell"></div>
+            <div data-cell-index="8" class="nine cell"></div>
+        </div>
+    </div>
+    <div class="footerMenu">
+        <div class="playerX">
+            <p>player X</p>
+            <p class="scorePlayerX">0</p>
+        </div>
+        <div class="menu">
+            <h2 id="statusText">turn</h2>
+            <button id="restartBtn">Restart</button>
+        </div>
+        <div class="playerO">
+            <p>player O</p>
+            <p class="scorePlayerO">0</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
