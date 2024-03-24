@@ -12,28 +12,14 @@ body{
 
 .gameboard {
     display: flex;
-    flex-direction: column;
     gap: 0.5em;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    
 }
 
-.topRow {
-    display: flex;
-    gap: 0.5em;
-}
 
-.midRow {
-    display: flex;
-    gap: 0.5em;
-}
-
-.bottomRow {
-    display: flex;
-    gap: 0.5em;
-}
 
 .gameboard div div{
     box-sizing:border-box;
@@ -42,101 +28,89 @@ body{
     font-size: 190px;
 }
 
+
+.row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+}
 .cell {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     overflow: hidden;
-}
-
-.one {
     border-right: 6px;
     border-bottom: 6px;
-    border-top: 0;
-    border-left: 0;
-    border-color: black;
-    border-style: solid;
-}
-
-.two{
-    border-right: 6px;
-    border-bottom: 6px;
-    border-top: 0;
+    border-top: 6px;
     border-left: 6px;
-    border-color: black;
+    border-color: #96C9FF;
     border-style: solid;
+    border-radius: 25px;
 }
 
-.three{
+.row1 .cell{
+    border-left: 0px;
+    border-radius: 0px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.row7 .cell{
     border-right: 0px;
-    border-bottom: 6px;
-    border-top: 0;
-    border-left: 6px;
-    border-color: black;
-    border-style: solid;
+    border-radius: 0px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
 }
 
-.four{
-    border-right: 6px;
-    border-bottom: 6px;
-    border-top: 6px;
-    border-left: 0;
-    border-color: black;
-    border-style: solid;
+
+
+.c0, .c6, .c12, .c18, .c24, .c30, .c36{
+    border-top: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+} 
+
+.row1 .cell.c0 {
+    border-top-right-radius: 0px;
 }
 
-.five{
-    border-right: 6px;
-    border-bottom: 6px;
-    border-top: 6px;
-    border-left: 6px;
-    border-color: black;
-    border-style: solid;
+.row1 .cell.c5 {
+    border-bottom-right-radius: 0px;
 }
 
-.six{
-    border-right: 0px;
-    border-bottom: 6px;
-    border-top: 6px;
-    border-left: 6px;
-    border-color: black;
-    border-style: solid;
+.row7 .cell.c36 {
+    border-top-left-radius: 0px;
+}
+.row7 .cell.c41 {
+    border-bottom-left-radius: 0px;
 }
 
-.seven{
-    border-right: 6px;
+
+.c5, .c11, .c17, .c23, .c29, .c35, .c41{
     border-bottom: 0px;
-    border-top: 6px;
-    border-left: 0;
-    border-color: black;
-    border-style: solid;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+} 
+
+
+.row:hover .cell{
+    border-color: #00A3FF;
 }
 
-.eight{
-    border-right: 6px;
-    border-bottom: 0px;
-    border-top: 6px;
-    border-left: 6px;
-    border-color: black;
-    border-style: solid;
-}
-
-.nine{
-    border-right: 0px;
-    border-bottom: 0px;
-    border-top: 6px;
-    border-left: 6px;
-    border-color: black;
-    border-style: solid;
-}
 
 .heading{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
     margin: 1em 1.5em;
     font-size: 2.5em;
+}
+
+h1{
+    font-weight: 300;
+    font-size: 2em;
 }
 
 .players p{
@@ -148,13 +122,14 @@ body{
     display: flex;
     justify-content: space-between;
     align-content: center;
-    margin: 1em 2em;
+    margin: 2em 2em;
 }
 
 .menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .menu button{
@@ -163,13 +138,13 @@ body{
     font-weight: 400;
     font-size: 1.5em;
     padding: 10px 77px;
+    margin-top: 2em;
 }
 
 .scorePlayerO{
     display: flex;
     justify-content: end;
 }
-
 
 
 .cell-content {
@@ -190,11 +165,7 @@ body{
     height: 100%;
 }
 
-/* .cell.clicked::before {
-    transform: translateX(0);
-} */
 
-/* Stijl voor het in beweging brengen van de tekstinhoud */
 @keyframes fadeInText {
     0% { opacity: 1; transform: translateY(-182px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -206,28 +177,29 @@ body{
 }
 
 .cell-content {
-    opacity: 0; /* Zet de opaciteit van de tekstinhoud op 0 */
-    animation: fadeInText 0.6s ease-out forwards; /* Pas de animatie toe */
+    opacity: 0; 
+    animation: fadeInText 0.6s ease-out forwards; 
 }
 
-.fade-out {
-    animation: fadeOutText 0.6s ease-out;
+
+.cell p.fade-out {
+    animation: fadeOutText 0.75s ease forwards;
 }
 
-@media screen and (max-width: 500px){
-    .gameboard div div{
-        box-sizing:border-box;
-        height: 120px;
-        width: 120px;
-        font-size: 140px;
-    }
-    .players p{
-        margin: 0;
-        font-size: 1.3em;;
-    }
 
-    .menu button{
-        font-size: 1.5em;
-        padding: 10px 20px;
-    }
+.blue-cell {
+    color: #1B89EE;
+    opacity: 0; 
+    animation: fadeInText 0.6s ease-out forwards; 
+}
+
+.orange-cell {
+    color: #EEA91B;
+    opacity: 0; 
+    animation: fadeInText 0.6s ease-out forwards; 
+}
+
+.winning-cell {
+    color: #398E0C; 
+    
 }
